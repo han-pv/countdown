@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+    <div>
+        <div>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet impedit in eum rem, consequatur suscipit
+            officiis adipisci corrupti quia
+        </div>
+    </div>
+
+    <div class="container-lg">
+        <div class="d-flex align-items-center justify-content-center vh-100">
+            <div class="d-flex" data-countdown="2025/10/30/20:25">
+            </div>
+        </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.countdown.min.js"></script>
+    <script>
+        $('[data-countdown]').each(function () {
+            var $this = $(this), finalDate = $(this).data('countdown');
+            $this.countdown(finalDate, function (event) {
+                $this.html(event.strftime(''
+                    + `<div class="me-3 border border-warning border-2 rounded-3 text-dark p-2">
+                        <span class="display-3">%D</span>
+                        <span class="fw-bold">days</span>
+                    </div>`
+                    + `<div class="me-3 border border-warning border-2 rounded-3 text-dark p-2">
+                        <span class="display-3">%H</span>
+                        <span class="fw-bold">hours</span>
+                    </div>`
+                    + `<div class="me-3 border border-warning border-2 rounded-3 text-dark p-2">
+                        <span class="display-3">%M</span>
+                        <span class="fw-bold">minutes</span>
+                    </div>`
+                    + `<div class="me-3 border border-warning border-2 rounded-3 text-dark p-2">
+                        <span class="display-3">%S</span>
+                        <span class="fw-bold">seconds</span>
+                    </div>`));
+            });
+        });
+    </script>
+</body>
+
+</html>
